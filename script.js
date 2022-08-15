@@ -3,6 +3,16 @@ const input = document.getElementById("input");
 const JENYA = "JENYA";
 const ROMA = "ROMA";
 const CHAGER = "CHAGER";
+
+const div = document.createElement("div");
+div.classList.add("gif-container");
+div.id = "gif-container";
+const gif = document.createElement("img");
+gif.src = "https://c.tenor.com/D0MsEp72YkUAAAAd/sueta-oper.gif";
+gif.classList.add("gif");
+gif.alt = "sueta";
+div.appendChild(gif);
+
 var isKyr = function (str) {
 	return /[а-я]/i.test(str);
 };
@@ -19,7 +29,9 @@ function calculateId() {
 		switch (input.value.toUpperCase()) {
 			case JENYA:
 				result = 0;
-				break;
+				addSueta();
+				iqLabel.textContent = `${input.value} IQ: ${result}`;
+				return;
 			case ROMA:
 				result = Number.MAX_SAFE_INTEGER;
 				break;
@@ -32,4 +44,14 @@ function calculateId() {
 		}
 		iqLabel.textContent = `${input.value} IQ: ${result}`;
 	}
+	removeSueta();
+}
+
+function addSueta() {
+	document.body.appendChild(div);
+}
+
+function removeSueta() {
+	const sueta = document.getElementById("gif-container");
+	if (sueta) sueta.remove();
 }
