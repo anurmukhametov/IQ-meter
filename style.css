@@ -117,26 +117,26 @@ h4 {
 }
 
 .gif-container {
-	margin: 10px auto 10px auto;
-	border-radius: 50%;
-	border: #9e037c solid 3px;
-	width: 250px;
-	height: 250px;
+	margin: auto;
+	margin-top: 1%;
+	width: 20vw;
+	min-width: 200px;
 	transition-duration: 0.2s;
+	border: rgba(173, 0, 96, 0.664) solid 3px;
+	border-radius: 2em;
 	overflow: hidden;
-	animation: heartbeat 1s infinite;
 }
 
 .gif {
 	width: 100%;
 	height: 100%;
-	border-radius: 50%;
-
+	margin: auto;
+	transform: scale(1.1);
 	transition-duration: 0.2s;
 }
 
-.gif:hover {
-	filter: hue-rotate(90deg);
+.gif-container:hover {
+	animation: heartbeat 1s infinite;
 }
 
 @keyframes heartbeat {
